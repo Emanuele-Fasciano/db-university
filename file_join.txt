@@ -26,7 +26,7 @@
     FROM students
     JOIN degrees ON degrees.id = students.degree_id
     JOIN departments ON departments.id = degrees.department_id  
-    ORDER BY students.surname ASC
+    ORDER BY students.surname, students.name
 
 5 = SELECT  degrees.name AS degrees_name,
             degrees.level AS degrees_level,
@@ -44,7 +44,7 @@
     JOIN course_teacher ON courses.id = course_teacher.course_id
     JOIN teachers ON teachers.id = course_teacher.teacher_id;
 
-6 = SELECT  teachers.surname AS teachers_surname, 
+6 = SELECT DISTINCT teachers.surname AS teachers_surname, 
             teachers.name AS teachers_name,
             teachers.phone AS teachers_phone,
             teachers.email AS teachers_email,
